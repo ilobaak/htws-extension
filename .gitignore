@@ -1,0 +1,55 @@
+# Dependencies
+node_modules/
+
+# Build and test output
+dist/
+build/
+coverage/
+release/
+*.tsbuildinfo
+__pycache__/
+*.py[cod]
+
+# Environment and credentials
+.env
+.env.*
+!.env.example
+!.env.sample
+*.key
+*.pem
+*.pfx
+*.p12
+
+# Editors
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Operating systems
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+
+# Local planning and design exploration
+PRODUCT.md
+PROJECT_PLAN.txt
+assets/mockups/
+
+# Local tooling — do not commit
+.C?dex/
+.C?dex-no-auto
+AGENTS.md
+.a?thropic/
+.c?rsor/
+.c?rsorrules
+.a?der*
+.c?ntinue/
+.c?pilot/
+.w?ndsurf/
+.c?deium/

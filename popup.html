@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hibernate Tabs, Windows, and Sessions</title>
+  </head>
+  <body>
+    <main class="popup-shell">
+      <div class="popup-content">
+        <section class="current-tab-heading" aria-label="Current tab">
+          <h1><span id="current-tab-title" title="Loading…">Loading…</span></h1>
+        </section>
+        <header class="current-tab-panel">
+          <p id="current-tab-url" class="current-tab-url" title="Loading…">
+            Loading…
+          </p>
+          <div
+            id="selected-tab-list"
+            class="selected-tab-list"
+            aria-label="Selected tabs"
+            hidden
+          ></div>
+          <p class="protection-line" id="protection-line">Basic protection</p>
+          <button
+            class="primary-action"
+            id="hibernate-current"
+            type="button"
+            disabled
+            title="Hibernate the current tab when it is not protected"
+          >
+            Hibernate tab
+          </button>
+          <label
+            class="site-protection-control"
+            id="protect-site-row"
+            title="Prevents this site from being hibernated"
+          >
+            <input id="protect-site" type="checkbox" />
+            <span id="protect-site-label">Never hibernate this site</span>
+          </label>
+          <label
+            class="site-protection-control"
+            id="protect-activity-row"
+            title="Prevents hibernation on this site while audio or video is playing, a stream or Picture-in-Picture is active, or a form has unsaved changes. Requires site access."
+          >
+            <input id="protect-activity" type="checkbox" />
+            <span>Protect site's media and forms</span>
+          </label>
+        </header>
+
+        <section
+          id="hibernate-group-section"
+          class="popup-section hibernate-controls"
+          aria-label="Hibernate group"
+          hidden
+        >
+          <div class="window-name-row group-name-row">
+            <span class="group-name-label">Group:</span>
+            <strong id="current-group-name">Group</strong>
+          </div>
+          <label
+            class="ignore-protection-control"
+            title="Forces hibernation ignoring any protection settings."
+          >
+            <input id="ignore-group-protection" type="checkbox" />
+            <span>Ignore protection</span>
+          </label>
+          <button
+            id="hibernate-group"
+            type="button"
+            title="Hibernates the entire group as one restorable group. If any tab is protected, the complete group stays open unless Ignore protection is selected."
+          >
+            Hibernate group
+          </button>
+        </section>
+
+        <section
+          class="popup-section hibernate-controls"
+          aria-label="Hibernate window"
+        >
+          <div class="window-name-row">
+            <label for="window-name">Window name:</label>
+            <input id="window-name" maxlength="80" placeholder="(Optional)" />
+          </div>
+          <label
+            class="ignore-protection-control"
+            title="Forces hibernation ignoring any protection settings."
+          >
+            <input id="ignore-window-protection" type="checkbox" />
+            <span>Ignore protection</span>
+          </label>
+          <button
+            id="hibernate-window"
+            type="button"
+            title="Hibernates every eligible tab in this window. Protected tabs stay open, and restoring recreates the saved tab order and state."
+          >
+            Hibernate this window
+          </button>
+        </section>
+
+        <section
+          class="popup-section hibernate-controls"
+          aria-label="Hibernate session"
+        >
+          <div class="window-name-row">
+            <label for="session-name">Session name:</label>
+            <input id="session-name" maxlength="80" placeholder="(Optional)" />
+          </div>
+          <label
+            class="ignore-protection-control"
+            title="Forces hibernation ignoring any protection settings."
+          >
+            <input id="ignore-session-protection" type="checkbox" />
+            <span>Ignore protection</span>
+          </label>
+          <button
+            id="hibernate-session"
+            type="button"
+            title="Hibernates eligible tabs across available regular and private windows as one locally saved session. Browser bookmarks are created only when you use the bookmark button. Private-tab behavior follows Settings."
+          >
+            Hibernate session
+          </button>
+        </section>
+
+        <section class="tab-meter" aria-label="Tab counts">
+          <div class="meter-copy">
+            <strong><span id="open-count">0</span> open tabs</strong>
+            <span id="hibernated-count">0 hibernated</span>
+          </div>
+          <div class="meter-track" aria-hidden="true">
+            <span class="meter-loaded" id="meter-open"></span>
+          </div>
+        </section>
+
+        <section class="archive-section" aria-labelledby="archive-title">
+          <div class="archive-section-heading">
+            <h2 id="archive-title">Hibernated Tabs, Windows, And Sessions</h2>
+            <span id="archive-summary">Checking</span>
+          </div>
+          <div
+            class="popup-archive-transfer-actions"
+            aria-label="Archive actions"
+          >
+            <button
+              class="archive-view-action"
+              id="open-hibernated"
+              type="button"
+              aria-label="View hibernated tabs, windows, and sessions"
+              title="View hibernated tabs, windows, and sessions"
+            >
+              View
+              <svg
+                class="archive-view-icon"
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+              >
+                <g class="archive-view-window archive-view-window--back">
+                  <rect x="2" y="2" width="15" height="10" rx="2" />
+                  <path d="M2 5h15" />
+                </g>
+                <g class="archive-view-window archive-view-window--middle">
+                  <rect x="4.5" y="6.5" width="16" height="11" rx="2" />
+                  <path d="M4.5 9.5h16" />
+                </g>
+                <g class="archive-view-window archive-view-window--front">
+                  <rect x="7" y="11" width="15" height="11" rx="2" />
+                  <path d="M7 14h15" />
+                </g>
+              </svg>
+            </button>
+            <button
+              id="export-archives"
+              type="button"
+              title="Download all hibernated entries as a JSON backup"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 15V4" />
+                <path d="m8 8 4-4 4 4" />
+                <path d="M5 17v3h14v-3" />
+              </svg>
+              Export
+            </button>
+            <button
+              id="import-archives"
+              type="button"
+              title="Import hibernated entries from a JSON backup"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 3v11" />
+                <path d="m8 10 4 4 4-4" />
+                <path d="M5 17v3h14v-3" />
+              </svg>
+              Import
+            </button>
+            <input
+              id="archive-import-file"
+              type="file"
+              accept="application/json,.json"
+              hidden
+            />
+          </div>
+          <div class="archive-table-shell">
+            <p class="archive-empty" id="archive-empty" hidden>
+              Hibernate a tab, window, or session to keep its URLs here.
+            </p>
+            <div class="archive-list" id="archive-list"></div>
+          </div>
+        </section>
+      </div>
+
+      <footer class="popup-nav" aria-label="Extension pages">
+        <section class="recent-event" aria-label="Most recent event">
+          <span>Most recent</span>
+          <p class="action-note" id="action-note" aria-live="polite">
+            No recent activity
+          </p>
+        </section>
+        <div class="popup-nav-actions">
+          <button
+            class="settings-action archive-view-footer"
+            id="open-hibernated-footer"
+            type="button"
+            aria-label="View hibernated tabs, windows, and sessions"
+            title="View hibernated tabs, windows, and sessions"
+          >
+            <svg
+              class="archive-view-icon"
+              aria-hidden="true"
+              viewBox="0 0 24 24"
+            >
+              <g class="archive-view-window archive-view-window--back">
+                <rect x="2" y="2" width="15" height="10" rx="2" />
+                <path d="M2 5h15" />
+              </g>
+              <g class="archive-view-window archive-view-window--middle">
+                <rect x="4.5" y="6.5" width="16" height="11" rx="2" />
+                <path d="M4.5 9.5h16" />
+              </g>
+              <g class="archive-view-window archive-view-window--front">
+                <rect x="7" y="11" width="15" height="11" rx="2" />
+                <path d="M7 14h15" />
+              </g>
+            </svg>
+          </button>
+          <button
+            class="settings-action"
+            id="open-activity"
+            type="button"
+            aria-label="Open activity log"
+            title="Activity log"
+          >
+            <svg
+              class="popup-nav-icon popup-nav-icon--activity"
+              aria-hidden="true"
+              viewBox="0 0 24 24"
+            >
+              <g class="popup-nav-icon-artwork" transform="translate(-1 .25)">
+                <path class="popup-nav-icon-paper" d="M5 2.5h10l4 4V21H5Z" />
+                <path d="M15 2.5v4h4M8.5 10.5h6M8.5 14h4.25" />
+                <path
+                  class="popup-nav-icon-fill popup-nav-icon-fill--orange"
+                  d="m12.5 20 .7-3 5.7-5.7 2.1 2.1-5.7 5.7Z"
+                />
+                <path d="m17.7 12.5 2.1 2.1" />
+              </g>
+            </svg>
+          </button>
+          <button
+            class="settings-action"
+            id="open-options"
+            type="button"
+            aria-label="Open settings"
+            title="Settings"
+          >
+            <svg
+              class="popup-nav-icon popup-nav-icon--settings"
+              aria-hidden="true"
+              viewBox="0 0 24 24"
+            >
+              <path
+                class="popup-nav-icon-gear"
+                d="M10 2h4l.5 2.2 1.8.75 1.9-1.2 2.8 2.8-1.2 1.9.75 1.8L22 10v4l-2.2.5-.75 1.8 1.2 1.9-2.8 2.8-1.9-1.2-1.8.75L14 22h-4l-.5-2.2-1.8-.75-1.9 1.2L3 17.45l1.2-1.9-.75-1.8L2 14v-4l2.2-.5.75-1.8-1.2-1.9L6.55 3l1.9 1.2 1.8-.75Z"
+              />
+              <circle class="popup-nav-icon-center" cx="12" cy="12" r="2.4" />
+            </svg>
+          </button>
+        </div>
+      </footer>
+    </main>
+    <script type="module" src="/src/popup/popup.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,860 @@
+{
+  "metadata": {
+    "bravePath": "C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe",
+    "completedRuns": 24,
+    "generatedAt": "2026-11-15T15:37:16.261Z",
+    "methods": ["native-discard", "htws-hibernate"],
+    "repeats": 3,
+    "runStartedAt": "2026-11-15T15:24:43.504Z",
+    "scenarios": [
+      {
+        "tabs": 10,
+        "windows": 1
+      },
+      {
+        "tabs": 30,
+        "windows": 3
+      },
+      {
+        "tabs": 60,
+        "windows": 6
+      },
+      {
+        "tabs": 100,
+        "windows": 10
+      }
+    ],
+    "settleMs": 10000,
+    "workloadMemoryMb": 4
+  },
+  "results": [
+    {
+      "activePrivateBytes": 689340416,
+      "activeProcessCount": 18,
+      "activeWorkingSetBytes": 1289519104,
+      "braveVersion": "Chrome/157.0.8103.79",
+      "completedAt": "2026-11-15T15:25:11.958Z",
+      "method": "native-discard",
+      "postPrivateBytes": 677457920,
+      "postProcessCount": 18,
+      "postWorkingSetBytes": 1231335424,
+      "remainingTestTabs": 10,
+      "repetition": 1,
+      "savedPrivateBytes": 11882496,
+      "savedPrivatePercent": 1.72374863336027,
+      "savedWorkingSetBytes": 58183680,
+      "savedWorkingSetPercent": 4.512044825045105,
+      "startedAt": "2026-11-15T15:24:43.519Z",
+      "tabCount": 10,
+      "transitionedTabs": 10,
+      "transitionDetail": {
+        "attempted": 10,
+        "errors": [],
+        "transitioned": 10
+      },
+      "transitionDurationMs": 214,
+      "windowCount": 1,
+      "workloadMemoryMb": 4
+    },
+    {
+      "activePrivateBytes": 684003328,
+      "activeProcessCount": 18,
+      "activeWorkingSetBytes": 1281966080,
+      "braveVersion": "Chrome/157.0.8103.79",
+      "completedAt": "2026-11-15T15:25:40.471Z",
+      "method": "htws-hibernate",
+      "postPrivateBytes": 327163904,
+      "postProcessCount": 8,
+      "postWorkingSetBytes": 502591488,
+      "remainingTestTabs": 0,
+      "repetition": 1,
+      "savedPrivateBytes": 356839424,
+      "savedPrivatePercent": 52.16925260340254,
+      "savedWorkingSetBytes": 779374592,
+      "savedWorkingSetPercent": 60.79525848297016,
+      "startedAt": "2026-11-15T15:25:12.156Z",
+      "tabCount": 10,
+      "transitionedTabs": 10,
+      "transitionDetail": {
+        "archived": 10,
+        "sessionId": "session-9dc56a01-e5b4-40f9-a8f2-f57a6694f48c",
+        "windows": 1,
+        "detail": "Protection rules were intentionally ignored. 2 tabs with unsupported URLs were left open.",
+        "skipped": [
+          {
+            "reason": "unsupported-url",
+            "title": "about:blank",
+            "url": "about:blank"
+          },
+          {
+            "reason": "unsupported-url",
+            "title": "Hibernate Tabs, Windows, and Sessions Settings",
+            "url": "chrome-extension://pkpcadkfecpnojmennefnociojhpodlc/options.html"
+          }
+        ]
+      },
+      "transitionDurationMs": 127,
+      "windowCount": 1,
+      "workloadMemoryMb": 4
+    },
+    {
+      "activePrivateBytes": 1550848000,
+      "activeProcessCount": 38,
+      "activeWorkingSetBytes": 2913718272,
+      "braveVersion": "Chrome/157.0.8103.79",
+      "completedAt": "2026-11-15T15:26:10.485Z",
+      "method": "native-discard",
+      "postPrivateBytes": 1511862272,
+      "postProcessCount": 38,
+      "postWorkingSetBytes": 2734026752,
+      "remainingTestTabs": 30,
+      "repetition": 1,
+      "savedPrivateBytes": 38985728,
+      "savedPrivatePercent": 2.513832948167712,
+      "savedWorkingSetBytes": 179691520,
+      "savedWorkingSetPercent": 6.167086287194756,
+      "startedAt": "2026-11-15T15:25:40.603Z",
+      "tabCount": 30,
+      "transitionedTabs": 30,
+      "transitionDetail": {
+        "attempted": 30,
+        "errors": [],
+        "transitioned": 30
+      },
+      "transitionDurationMs": 783,
+      "windowCount": 3,
+      "workloadMemoryMb": 4
+    },
+    {
+      "activePrivateBytes": 1552015360,
+      "activeProcessCount": 38,
+      "activeWorkingSetBytes": 2906652672,
+      "braveVersion": "Chrome/157.0.8103.79",
+      "completedAt": "2026-11-15T15:26:40.185Z",
+      "method": "htws-hibernate",
+      "postPrivateBytes": 462589952,
+      "postProcessCount": 8,
+      "postWorkingSetBytes": 537477120,
+      "remainingTestTabs": 0,
+      "repetition": 1,
+      "savedPrivateBytes": 1089425408,
+      "savedPrivatePercent": 70.1942413765802,
+      "savedWorkingSetBytes": 2369175552,
+      "savedWorkingSetPercent": 81.50872564935064,
+      "startedAt": "2026-11-15T15:26:10.816Z",
+      "tabCount": 30,
+      "transitionedTabs": 30,
+      "transitionDetail": {
+        "archived": 30,
+        "sessionId": "session-0ac54beb-5cbb-4ba4-abd9-7abf4a38d990",
+        "windows": 3,
+        "detail": "Protection rules were intentionally ignored. 2 tabs with unsupported URLs were left open.",
+        "skipped": [
+          {
+            "reason": "unsupported-url",
+            "title": "about:blank",
+            "url": "about:blank"
+          },
+          {
+            "reason": "unsupported-url",
+            "title": "Hibernate Tabs, Windows, and Sessions Settings",
+            "url": "chrome-extension://pkpcadkfecpnojmennefnociojhpodlc/options.html"
+          }
+        ]
+      },
+      "transitionDurationMs": 381,
+      "windowCount": 3,
+      "workloadMemoryMb": 4
+    },
+    {
+      "activePrivateBytes": 3726581760,
+      "activeProcessCount": 74,
+      "activeWorkingSetBytes": 6472200192,
+      "braveVersion": "Chrome/157.0.8103.79",
+      "completedAt": "2026-11-15T15:27:12.525Z",
+      "method": "native-discard",
+      "postPrivateBytes": 2735902720,
+      "postProcessCount": 68,
+      "postWorkingSetBytes": 4967546880,
+      "remainingTestTabs": 60,
+      "repetition": 1,
+      "savedPrivateBytes": 990679040,
+      "savedPrivatePercent": 26.58412195953001,
+      "savedWorkingSetBytes": 1504653312,
+      "savedWorkingSetPercent": 23.247941462933042,
+      "startedAt": "2026-11-15T15:26:40.363Z",
+      "tabCount": 60,
+      "transitionedTabs": 60,
+      "transitionDetail": {
+        "attempted": 60,
+        "errors": [],
+        "transitioned": 60
+      },
+      "transitionDurationMs": 1714,
+      "windowCount": 6,
+      "workloadMemoryMb": 4
+    },
+    {
+      "activePrivateBytes": 2883342336,
+      "activeProcessCount": 68,
+      "activeWorkingSetBytes": 5348696064,
+      "braveVersion": "Chrome/157.0.8103.79",
+      "completedAt": "2026-11-15T15:27:44.138Z",
+      "method": "htws-hibernate",
+      "postPrivateBytes": 654589952,
+      "postProcessCount": 8,
+      "postWorkingSetBytes": 576102400,
+      "remainingTestTabs": 0,
+      "repetition": 1,
+      "savedPrivateBytes": 2228752384,
+      "savedPrivatePercent": 77.2975291963389,
+      "savedWorkingSetBytes": 4772593664,
+      "savedWorkingSetPercent": 89.2291056903098,
+      "startedAt": "2026-11-15T15:27:13.059Z",
+      "tabCount": 60,
+      "transitionedTabs": 60,
+      "transitionDetail": {
+        "archived": 60,
+        "sessionId": "session-81615897-db27-4539-b9bd-0379005ede50",
+        "windows": 6,
+        "detail": "Protection rules were intentionally ignored. 2 tabs with unsupported URLs were left open.",
+        "skipped": [
+          {
+            "reason": "unsupported-url",
+            "title": "about:blank",
+            "url": "about:blank"
+          },
+          {
+            "reason": "unsupported-url",
+            "title": "Hibernate Tabs, Windows, and Sessions Settings",
+            "url": "chrome-extension://pkpcadkfecpnojmennefnociojhpodlc/options.html"
+          }
+        ]
+      },
+      "transitionDurationMs": 827,
+      "windowCount": 6,
+      "workloadMemoryMb": 4
+    },
+    {
+      "activePrivateBytes": 4543311872,
+      "activeProcessCount": 108,
+      "activeWorkingSetBytes": 8573513728,
+      "braveVersion": "Chrome/157.0.8103.79",
+      "completedAt": "2026-11-15T15:28:19.696Z",
+      "method": "native-discard",
+      "postPrivateBytes": 4363407360,
+      "postProcessCount": 108,
+      "postWorkingSetBytes": 7961513984,
+      "remainingTestTabs": 100,
+      "repetition": 1,
+      "savedPrivateBytes": 179904512,
+      "savedPrivatePercent": 3.95976585073841,
+      "savedWorkingSetBytes": 611999744,
+      "savedWorkingSetPercent": 7.138260501074221,
+      "startedAt": "2026-11-15T15:27:44.348Z",
+      "tabCount": 100,
+      "transitionedTabs": 100,
+      "transitionDetail": {
+        "attempted": 100,
+        "errors": [],
+        "transitioned": 100
+      },
+      "transitionDurationMs": 3246,
+      "windowCount": 10,
+      "workloadMemoryMb": 4
+    },
+    {
+      "activePrivateBytes": 5445697536,
+      "activeProcessCount": 114,
+      "activeWorkingSetBytes": 9670266880,
+      "braveVersion": "Chrome/157.0.8103.79",
+      "completedAt": "2026-11-15T15:28:54.265Z",
+      "method": "htws-hibernate",
+      "postPrivateBytes": 851705856,
+      "postProcessCount": 8,
+      "postWorkingSetBytes": 603680768,
+      "remainingTestTabs": 0,
+      "repetition": 1,
+      "savedPrivateBytes": 4593991680,
+      "savedPrivatePercent": 84.36002274511928,
+      "savedWorkingSetBytes": 9066586112,
+      "savedWorkingSetPercent": 93.75735152409776,
+      "startedAt": "2026-11-15T15:28:20.527Z",
+      "tabCount": 100,
+      "transitionedTabs": 100,
+      "transitionDetail": {
+        "archived": 100,
+        "sessionId": "session-abed324e-7f25-4ddb-8212-dde077a3ab16",
+        "windows": 10,
+        "detail": "Protection rules were intentionally ignored. 2 tabs with unsupported URLs were left open.",
+        "skipped": [
+          {
+            "reason": "unsupported-url",
+            "title": "about:blank",
+            "url": "about:blank"
+          },
+          {
+            "reason": "unsupported-url",
+            "title": "Hibernate Tabs, Windows, and Sessions Settings",
+            "url": "chrome-extension://pkpcadkfecpnojmennefnociojhpodlc/options.html"
+          }
+        ]
+      },
+      "transitionDurationMs": 1437,
+      "windowCount": 10,
+      "workloadMemoryMb": 4
+    },
+    {
+      "activePrivateBytes": 682336256,
+      "activeProcessCount": 18,
+      "activeWorkingSetBytes": 1280122880,
+      "braveVersion": "Chrome/157.0.8103.79",
+      "completedAt": "2026-11-15T15:29:22.875Z",
+      "method": "htws-hibernate",
+      "postPrivateBytes": 331059200,
+      "postProcessCount": 8,
+      "postWorkingSetBytes": 499982336,
+      "remainingTestTabs": 0,
+      "repetition": 2,
+      "savedPrivateBytes": 351277056,
+      "savedPrivatePercent": 51.481517054254255,
+      "savedWorkingSetBytes": 780140544,
+      "savedWorkingSetPercent": 60.94262950756727,
+      "startedAt": "2026-11-15T15:28:54.481Z",
+      "tabCount": 10,
+      "transitionedTabs": 10,
+      "transitionDetail": {
+        "archived": 10,
+        "sessionId": "session-95c93430-5b41-4a2b-a9cc-4852f421648d",
+        "windows": 1,
+        "detail": "Protection rules were intentionally ignored. 2 tabs with unsupported URLs were left open.",
+        "skipped": [
+          {
+            "reason": "unsupported-url",
+            "title": "about:blank",
+            "url": "about:blank"
+          },
+          {
+            "reason": "unsupported-url",
+            "title": "Hibernate Tabs, Windows, and Sessions Settings",
+            "url": "chrome-extension://pkpcadkfecpnojmennefnociojhpodlc/options.html"
+          }
+        ]
+      },
+      "transitionDurationMs": 136,
+      "windowCount": 1,
+      "workloadMemoryMb": 4
+    },
+    {
+      "activePrivateBytes": 719880192,
+      "activeProcessCount": 18,
+      "activeWorkingSetBytes": 1297137664,
+      "braveVersion": "Chrome/157.0.8103.79",
+      "completedAt": "2026-11-15T15:29:51.426Z",
+      "method": "native-discard",
+      "postPrivateBytes": 661401600,
+      "postProcessCount": 18,
+      "postWorkingSetBytes": 1221558272,
+      "remainingTestTabs": 10,
+      "repetition": 2,
+      "savedPrivateBytes": 58478592,
+      "savedPrivatePercent": 8.1233783968319,
+      "savedWorkingSetBytes": 75579392,
+      "savedWorkingSetPercent": 5.826628437180281,
+      "startedAt": "2026-11-15T15:29:23.006Z",
+      "tabCount": 10,
+      "transitionedTabs": 10,
+      "transitionDetail": {
+        "attempted": 10,
+        "errors": [],
+        "transitioned": 10
+      },
+      "transitionDurationMs": 216,
+      "windowCount": 1,
+      "workloadMemoryMb": 4
+    },
+    {
+      "activePrivateBytes": 1560559616,
+      "activeProcessCount": 38,
+      "activeWorkingSetBytes": 2915708928,
+      "braveVersion": "Chrome/157.0.8103.79",
+      "completedAt": "2026-11-15T15:30:21.090Z",
+      "method": "htws-hibernate",
+      "postPrivateBytes": 456650752,
+      "postProcessCount": 8,
+      "postWorkingSetBytes": 533557248,
+      "remainingTestTabs": 0,
+      "repetition": 2,
+      "savedPrivateBytes": 1103908864,
+      "savedPrivatePercent": 70.73801299751179,
+      "savedWorkingSetBytes": 2382151680,
+      "savedWorkingSetPercent": 81.70059971089131,
+      "startedAt": "2026-11-15T15:29:51.634Z",
+      "tabCount": 30,
+      "transitionedTabs": 30,
+      "transitionDetail": {
+        "archived": 30,
+        "sessionId": "session-37d79206-b100-4a76-bfc2-f520e06ab7a9",
+        "windows": 3,
+        "detail": "Protection rules were intentionally ignored. 2 tabs with unsupported URLs were left open.",
+        "skipped": [
+          {
+            "reason": "unsupported-url",
+            "title": "about:blank",
+            "url": "about:blank"
+          },
+          {
+            "reason": "unsupported-url",
+            "title": "Hibernate Tabs, Windows, and Sessions Settings",
+            "url": "chrome-extension://pkpcadkfecpnojmennefnociojhpodlc/options.html"
+          }
+        ]
+      },
+      "transitionDurationMs": 407,
+      "windowCount": 3,
+      "workloadMemoryMb": 4
+    },
+    {
+      "activePrivateBytes": 1569083392,
+      "activeProcessCount": 38,
+      "activeWorkingSetBytes": 2908639232,
+      "braveVersion": "Chrome/157.0.8103.79",
+      "completedAt": "2026-11-15T15:30:51.115Z",
+      "method": "native-discard",
+      "postPrivateBytes": 1510068224,
+      "postProcessCount": 38,
+      "postWorkingSetBytes": 2739568640,
+      "remainingTestTabs": 30,
+      "repetition": 2,
+      "savedPrivateBytes": 59015168,
+      "savedPrivatePercent": 3.7611237427462365,
+      "savedWorkingSetBytes": 169070592,
+      "savedWorkingSetPercent": 5.812704103689955,
+      "startedAt": "2026-11-15T15:30:21.264Z",
+      "tabCount": 30,
+      "transitionedTabs": 30,
+      "transitionDetail": {
+        "attempted": 30,
+        "errors": [],
+        "transitioned": 30
+      },
+      "transitionDurationMs": 790,
+      "windowCount": 3,
+      "workloadMemoryMb": 4
+    },
+    {
+      "activePrivateBytes": 2801356800,
+      "activeProcessCount": 68,
+      "activeWorkingSetBytes": 5323558912,
+      "braveVersion": "Chrome/157.0.8103.79",
+      "completedAt": "2026-11-15T15:31:22.598Z",
+      "method": "htws-hibernate",
+      "postPrivateBytes": 633298944,
+      "postProcessCount": 8,
+      "postWorkingSetBytes": 563654656,
+      "remainingTestTabs": 0,
+      "repetition": 2,
+      "savedPrivateBytes": 2168057856,
+      "savedPrivatePercent": 77.39313521219432,
+      "savedWorkingSetBytes": 4759904256,
+      "savedWorkingSetPercent": 89.41207065954603,
+      "startedAt": "2026-11-15T15:30:51.441Z",
+      "tabCount": 60,
+      "transitionedTabs": 60,
+      "transitionDetail": {
+        "archived": 60,
+        "sessionId": "session-d45e4f54-f194-4d99-9d10-1e8af5067c6e",
+        "windows": 6,
+        "detail": "Protection rules were intentionally ignored. 2 tabs with unsupported URLs were left open.",
+        "skipped": [
+          {
+            "reason": "unsupported-url",
+            "title": "about:blank",
+            "url": "about:blank"
+          },
+          {
+            "reason": "unsupported-url",
+            "title": "Hibernate Tabs, Windows, and Sessions Settings",
+            "url": "chrome-extension://pkpcadkfecpnojmennefnociojhpodlc/options.html"
+          }
+        ]
+      },
+      "transitionDurationMs": 788,
+      "windowCount": 6,
+      "workloadMemoryMb": 4
+    },
+    {
+      "activePrivateBytes": 2875150336,
+      "activeProcessCount": 68,
+      "activeWorkingSetBytes": 5347643392,
+      "braveVersion": "Chrome/157.0.8103.79",
+      "completedAt": "2026-11-15T15:31:55.049Z",
+      "method": "native-discard",
+      "postPrivateBytes": 2719522816,
+      "postProcessCount": 68,
+      "postWorkingSetBytes": 4978151424,
+      "remainingTestTabs": 60,
+      "repetition": 2,
+      "savedPrivateBytes": 155627520,
+      "savedPrivatePercent": 5.4128480883721,
+      "savedWorkingSetBytes": 369491968,
+      "savedWorkingSetPercent": 6.909435445017796,
+      "startedAt": "2026-11-15T15:31:22.786Z",
+      "tabCount": 60,
+      "transitionedTabs": 60,
+      "transitionDetail": {
+        "attempted": 60,
+        "errors": [],
+        "transitioned": 60
+      },
+      "transitionDurationMs": 1769,
+      "windowCount": 6,
+      "workloadMemoryMb": 4
+    },
+    {
+      "activePrivateBytes": 4527067136,
+      "activeProcessCount": 108,
+      "activeWorkingSetBytes": 8540573696,
+      "braveVersion": "Chrome/157.0.8103.79",
+      "completedAt": "2026-11-15T15:32:28.895Z",
+      "method": "htws-hibernate",
+      "postPrivateBytes": 851808256,
+      "postProcessCount": 8,
+      "postWorkingSetBytes": 599339008,
+      "remainingTestTabs": 0,
+      "repetition": 2,
+      "savedPrivateBytes": 3675258880,
+      "savedPrivatePercent": 81.18410373846066,
+      "savedWorkingSetBytes": 7941234688,
+      "savedWorkingSetPercent": 92.98245025061136,
+      "startedAt": "2026-11-15T15:31:55.597Z",
+      "tabCount": 100,
+      "transitionedTabs": 100,
+      "transitionDetail": {
+        "archived": 100,
+        "sessionId": "session-dc7f16c7-47a5-43fa-9b29-4b25ad8f0631",
+        "windows": 10,
+        "detail": "Protection rules were intentionally ignored. 2 tabs with unsupported URLs were left open.",
+        "skipped": [
+          {
+            "reason": "unsupported-url",
+            "title": "about:blank",
+            "url": "about:blank"
+          },
+          {
+            "reason": "unsupported-url",
+            "title": "Hibernate Tabs, Windows, and Sessions Settings",
+            "url": "chrome-extension://pkpcadkfecpnojmennefnociojhpodlc/options.html"
+          }
+        ]
+      },
+      "transitionDurationMs": 1386,
+      "windowCount": 10,
+      "workloadMemoryMb": 4
+    },
+    {
+      "activePrivateBytes": 4556443648,
+      "activeProcessCount": 108,
+      "activeWorkingSetBytes": 8565448704,
+      "braveVersion": "Chrome/157.0.8103.79",
+      "completedAt": "2026-11-15T15:33:04.382Z",
+      "method": "native-discard",
+      "postPrivateBytes": 4346765312,
+      "postProcessCount": 108,
+      "postWorkingSetBytes": 7941574656,
+      "remainingTestTabs": 100,
+      "repetition": 2,
+      "savedPrivateBytes": 209678336,
+      "savedPrivatePercent": 4.601798073197634,
+      "savedWorkingSetBytes": 623874048,
+      "savedWorkingSetPercent": 7.283611980638627,
+      "startedAt": "2026-11-15T15:32:29.104Z",
+      "tabCount": 100,
+      "transitionedTabs": 100,
+      "transitionDetail": {
+        "attempted": 100,
+        "errors": [],
+        "transitioned": 100
+      },
+      "transitionDurationMs": 3174,
+      "windowCount": 10,
+      "workloadMemoryMb": 4
+    },
+    {
+      "activePrivateBytes": 717008896,
+      "activeProcessCount": 18,
+      "activeWorkingSetBytes": 1294925824,
+      "braveVersion": "Chrome/157.0.8103.79",
+      "completedAt": "2026-11-15T15:33:33.790Z",
+      "method": "native-discard",
+      "postPrivateBytes": 671694848,
+      "postProcessCount": 18,
+      "postWorkingSetBytes": 1228414976,
+      "remainingTestTabs": 10,
+      "repetition": 3,
+      "savedPrivateBytes": 45314048,
+      "savedPrivatePercent": 6.319872494301661,
+      "savedWorkingSetBytes": 66510848,
+      "savedWorkingSetPercent": 5.136267017561617,
+      "startedAt": "2026-11-15T15:33:05.251Z",
+      "tabCount": 10,
+      "transitionedTabs": 10,
+      "transitionDetail": {
+        "attempted": 10,
+        "errors": [],
+        "transitioned": 10
+      },
+      "transitionDurationMs": 210,
+      "windowCount": 1,
+      "workloadMemoryMb": 4
+    },
+    {
+      "activePrivateBytes": 700063744,
+      "activeProcessCount": 18,
+      "activeWorkingSetBytes": 1288818688,
+      "braveVersion": "Chrome/157.0.8103.79",
+      "completedAt": "2026-11-15T15:34:02.357Z",
+      "method": "htws-hibernate",
+      "postPrivateBytes": 328101888,
+      "postProcessCount": 8,
+      "postWorkingSetBytes": 503365632,
+      "remainingTestTabs": 0,
+      "repetition": 3,
+      "savedPrivateBytes": 371961856,
+      "savedPrivatePercent": 53.13256959640521,
+      "savedWorkingSetBytes": 785453056,
+      "savedWorkingSetPercent": 60.943642679396035,
+      "startedAt": "2026-11-15T15:33:33.982Z",
+      "tabCount": 10,
+      "transitionedTabs": 10,
+      "transitionDetail": {
+        "archived": 10,
+        "sessionId": "session-12537162-5f54-43d3-ba61-0a269abf39d0",
+        "windows": 1,
+        "detail": "Protection rules were intentionally ignored. 2 tabs with unsupported URLs were left open.",
+        "skipped": [
+          {
+            "reason": "unsupported-url",
+            "title": "about:blank",
+            "url": "about:blank"
+          },
+          {
+            "reason": "unsupported-url",
+            "title": "Hibernate Tabs, Windows, and Sessions Settings",
+            "url": "chrome-extension://pkpcadkfecpnojmennefnociojhpodlc/options.html"
+          }
+        ]
+      },
+      "transitionDurationMs": 138,
+      "windowCount": 1,
+      "workloadMemoryMb": 4
+    },
+    {
+      "activePrivateBytes": 1558396928,
+      "activeProcessCount": 38,
+      "activeWorkingSetBytes": 2910380032,
+      "braveVersion": "Chrome/157.0.8103.79",
+      "completedAt": "2026-11-15T15:34:32.444Z",
+      "method": "native-discard",
+      "postPrivateBytes": 1483284480,
+      "postProcessCount": 38,
+      "postWorkingSetBytes": 2722140160,
+      "remainingTestTabs": 30,
+      "repetition": 3,
+      "savedPrivateBytes": 75112448,
+      "savedPrivatePercent": 4.819853443653606,
+      "savedWorkingSetBytes": 188239872,
+      "savedWorkingSetPercent": 6.467879449772146,
+      "startedAt": "2026-11-15T15:34:02.508Z",
+      "tabCount": 30,
+      "transitionedTabs": 30,
+      "transitionDetail": {
+        "attempted": 30,
+        "errors": [],
+        "transitioned": 30
+      },
+      "transitionDurationMs": 809,
+      "windowCount": 3,
+      "workloadMemoryMb": 4
+    },
+    {
+      "activePrivateBytes": 1563185152,
+      "activeProcessCount": 38,
+      "activeWorkingSetBytes": 2902568960,
+      "braveVersion": "Chrome/157.0.8103.79",
+      "completedAt": "2026-11-15T15:35:02.291Z",
+      "method": "htws-hibernate",
+      "postPrivateBytes": 446914560,
+      "postProcessCount": 8,
+      "postWorkingSetBytes": 526606336,
+      "remainingTestTabs": 0,
+      "repetition": 3,
+      "savedPrivateBytes": 1116270592,
+      "savedPrivatePercent": 71.41000479513254,
+      "savedWorkingSetBytes": 2375962624,
+      "savedWorkingSetPercent": 81.85723256683625,
+      "startedAt": "2026-11-15T15:34:32.796Z",
+      "tabCount": 30,
+      "transitionedTabs": 30,
+      "transitionDetail": {
+        "archived": 30,
+        "sessionId": "session-56e981ab-0864-4c8e-81be-7f5e1c877c6f",
+        "windows": 3,
+        "detail": "Protection rules were intentionally ignored. 2 tabs with unsupported URLs were left open.",
+        "skipped": [
+          {
+            "reason": "unsupported-url",
+            "title": "about:blank",
+            "url": "about:blank"
+          },
+          {
+            "reason": "unsupported-url",
+            "title": "Hibernate Tabs, Windows, and Sessions Settings",
+            "url": "chrome-extension://pkpcadkfecpnojmennefnociojhpodlc/options.html"
+          }
+        ]
+      },
+      "transitionDurationMs": 422,
+      "windowCount": 3,
+      "workloadMemoryMb": 4
+    },
+    {
+      "activePrivateBytes": 2869411840,
+      "activeProcessCount": 68,
+      "activeWorkingSetBytes": 5341827072,
+      "braveVersion": "Chrome/157.0.8103.79",
+      "completedAt": "2026-11-15T15:35:34.584Z",
+      "method": "native-discard",
+      "postPrivateBytes": 2770448384,
+      "postProcessCount": 68,
+      "postWorkingSetBytes": 4987957248,
+      "remainingTestTabs": 60,
+      "repetition": 3,
+      "savedPrivateBytes": 98963456,
+      "savedPrivatePercent": 3.4489108402089816,
+      "savedWorkingSetBytes": 353869824,
+      "savedWorkingSetPercent": 6.624509165690941,
+      "startedAt": "2026-11-15T15:35:02.466Z",
+      "tabCount": 60,
+      "transitionedTabs": 60,
+      "transitionDetail": {
+        "attempted": 60,
+        "errors": [],
+        "transitioned": 60
+      },
+      "transitionDurationMs": 1736,
+      "windowCount": 6,
+      "workloadMemoryMb": 4
+    },
+    {
+      "activePrivateBytes": 2758049792,
+      "activeProcessCount": 68,
+      "activeWorkingSetBytes": 5292511232,
+      "braveVersion": "Chrome/157.0.8103.79",
+      "completedAt": "2026-11-15T15:36:06.073Z",
+      "method": "htws-hibernate",
+      "postPrivateBytes": 633524224,
+      "postProcessCount": 8,
+      "postWorkingSetBytes": 563138560,
+      "remainingTestTabs": 0,
+      "repetition": 3,
+      "savedPrivateBytes": 2124525568,
+      "savedPrivatePercent": 77.02999322791051,
+      "savedWorkingSetBytes": 4729372672,
+      "savedWorkingSetPercent": 89.3597096857328,
+      "startedAt": "2026-11-15T15:35:35.099Z",
+      "tabCount": 60,
+      "transitionedTabs": 60,
+      "transitionDetail": {
+        "archived": 60,
+        "sessionId": "session-e5dd5e52-a070-4862-a157-f9fa53bb0ae5",
+        "windows": 6,
+        "detail": "Protection rules were intentionally ignored. 2 tabs with unsupported URLs were left open.",
+        "skipped": [
+          {
+            "reason": "unsupported-url",
+            "title": "about:blank",
+            "url": "about:blank"
+          },
+          {
+            "reason": "unsupported-url",
+            "title": "Hibernate Tabs, Windows, and Sessions Settings",
+            "url": "chrome-extension://pkpcadkfecpnojmennefnociojhpodlc/options.html"
+          }
+        ]
+      },
+      "transitionDurationMs": 801,
+      "windowCount": 6,
+      "workloadMemoryMb": 4
+    },
+    {
+      "activePrivateBytes": 4552704000,
+      "activeProcessCount": 108,
+      "activeWorkingSetBytes": 8567726080,
+      "braveVersion": "Chrome/157.0.8103.79",
+      "completedAt": "2026-11-15T15:36:41.739Z",
+      "method": "native-discard",
+      "postPrivateBytes": 4333445120,
+      "postProcessCount": 108,
+      "postWorkingSetBytes": 7942324224,
+      "remainingTestTabs": 100,
+      "repetition": 3,
+      "savedPrivateBytes": 219258880,
+      "savedPrivatePercent": 4.816014394961764,
+      "savedWorkingSetBytes": 625401856,
+      "savedWorkingSetPercent": 7.299508062704077,
+      "startedAt": "2026-11-15T15:36:06.337Z",
+      "tabCount": 100,
+      "transitionedTabs": 100,
+      "transitionDetail": {
+        "attempted": 100,
+        "errors": [],
+        "transitioned": 100
+      },
+      "transitionDurationMs": 3201,
+      "windowCount": 10,
+      "workloadMemoryMb": 4
+    },
+    {
+      "activePrivateBytes": 4546146304,
+      "activeProcessCount": 108,
+      "activeWorkingSetBytes": 8564146176,
+      "braveVersion": "Chrome/157.0.8103.79",
+      "completedAt": "2026-11-15T15:37:16.066Z",
+      "method": "htws-hibernate",
+      "postPrivateBytes": 858259456,
+      "postProcessCount": 8,
+      "postWorkingSetBytes": 608616448,
+      "remainingTestTabs": 0,
+      "repetition": 3,
+      "savedPrivateBytes": 3687886848,
+      "savedPrivatePercent": 81.12116507898467,
+      "savedWorkingSetBytes": 7955529728,
+      "savedWorkingSetPercent": 92.89343694639899,
+      "startedAt": "2026-11-15T15:36:42.605Z",
+      "tabCount": 100,
+      "transitionedTabs": 100,
+      "transitionDetail": {
+        "archived": 100,
+        "sessionId": "session-e8988eac-c38b-4977-9669-bb8353e1c9d5",
+        "windows": 10,
+        "detail": "Protection rules were intentionally ignored. 2 tabs with unsupported URLs were left open.",
+        "skipped": [
+          {
+            "reason": "unsupported-url",
+            "title": "about:blank",
+            "url": "about:blank"
+          },
+          {
+            "reason": "unsupported-url",
+            "title": "Hibernate Tabs, Windows, and Sessions Settings",
+            "url": "chrome-extension://pkpcadkfecpnojmennefnociojhpodlc/options.html"
+          }
+        ]
+      },
+      "transitionDurationMs": 1383,
+      "windowCount": 10,
+      "workloadMemoryMb": 4
+    }
+  ]
+}

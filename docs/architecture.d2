@@ -1,0 +1,88 @@
+direction: right
+
+browser: "Brave / Chromium" {
+  popup: "Popup controls"
+  context: "Tab context menu"
+}
+
+ui: "Hibernated page" {
+  filter: "Date, URL, saved-name, group-name/color filter + field highlighting"
+  table: "Archive table renderer"
+  expansion: "Session, window, and group open-state memory"
+  selection: "Checkbox/row selection + visible-order Shift ranges + hierarchy-aware actions"
+  sticky_actions: "Sticky selection action bar"
+  drag: "Scope-aware hierarchy drag and drop"
+  pinning: "Pinned-first sorting"
+  sorting: "Active sort reconciliation"
+  actions: "Stable icon actions + clickable name/hover restore target"
+}
+
+worker: "Extension service worker" {
+  messages: "Validated messages"
+  archive: "Archive mutation service"
+  history: "Undo / redo history"
+}
+
+storage: "chrome.storage.local" {
+  store: "Sessions, windows, groups, tabs"
+  activity: "Activity log"
+}
+
+settings: "chrome.storage.sync" {
+  deletion_warning: "Shared archive-deletion warning preference"
+}
+
+browser.popup -> worker.messages: "hibernate / restore"
+browser.context -> worker.messages: "hibernate tab / group"
+ui.filter -> ui.table: "filtered snapshot + match IDs"
+ui.selection -> worker.messages: "restore / delete / duplicate / merge / regroup"
+ui.selection -> settings.deletion_warning: "gate Delete / Backspace and bulk deletion"
+ui.drag -> worker.messages: "move item"
+ui.pinning -> worker.messages: "toggle item pin"
+ui.actions -> settings.deletion_warning: "gate row erase with the shared confirmation dialog"
+ui.actions -> worker.messages: "rename / restore / erase without layout shift"
+worker.messages -> worker.archive
+worker.archive -> worker.history: "record mutation"
+worker.archive -> storage.store: "load / normalize / save"
+worker.archive -> storage.activity: "record user-visible actions"
+storage.store -> ui.table: "archive snapshot"
+ui.expansion -> ui.table: "restore live disclosure state after refresh"
+ui.sorting -> ui.table: "insert new or reparented entries in active sort order"
+
+edge_cases: "Important branches" {
+  reciprocal: "Lower hierarchy item moves into higher item regardless of drag direction"
+  nested_group: "Nested groups remain selectable, draggable, and valid drop targets"
+  ungroup_drop: "Dropping a grouped tab on its containing window removes group membership"
+  collapsed_move: "Dragged groups carry their current collapsed state"
+  sibling_state: "Unmoved groups keep their disclosure state after group mutations"
+  invalid_color: "Unsupported group colors normalize to a browser-safe fallback"
+  duplicate: "Clones receive fresh IDs and no permanent bookmark links"
+  pinned_sort: "Pinned siblings remain first under every secondary sort"
+  filter_toggle: "Select Matched removes matches while preserving unrelated effective selections"
+  filter_scope: "Type labels, counts, pin state, and bookmark state are never searchable"
+  restore_selection: "Parent selections restore descendants once; overlapping child selections are deduplicated"
+  range_selection: "Shift-click selects the inclusive range in the currently rendered entry order"
+  row_selection: "Non-interactive row clicks toggle selection; text, actions, disclosure, and drag remain isolated"
+  delete_shortcut: "Delete / Backspace ignores editable targets and uses the same warning gate as the button"
+  delete_summary: "Single entries show names and descendant counts; aggregate deletion shows hierarchy totals"
+  hover_restore: "Entry name and icon form one highlighted restore target without breaking row dragging"
+  icon_busy: "Icon-only actions retain their symbol while busy"
+}
+
+ui.drag -> edge_cases.reciprocal
+ui.drag -> edge_cases.ungroup_drop
+ui.drag -> edge_cases.collapsed_move
+ui.expansion -> edge_cases.sibling_state
+ui.table -> edge_cases.nested_group
+worker.archive -> edge_cases.invalid_color
+ui.selection -> edge_cases.duplicate
+ui.selection -> edge_cases.filter_toggle
+ui.selection -> edge_cases.restore_selection
+ui.selection -> edge_cases.range_selection
+ui.selection -> edge_cases.row_selection
+ui.selection -> edge_cases.delete_shortcut
+ui.selection -> edge_cases.delete_summary
+ui.filter -> edge_cases.filter_scope
+ui.pinning -> edge_cases.pinned_sort
+ui.actions -> edge_cases.icon_busy
+ui.actions -> edge_cases.hover_restore

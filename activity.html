@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Activity - Hibernate Tabs, Windows, and Sessions</title>
+  </head>
+  <body>
+    <main class="activity-shell">
+      <header>
+        <div>
+          <p class="product-name">Hibernate Tabs, Windows, and Sessions</p>
+          <h1>Activity</h1>
+          <p>
+            Local history of hibernated and restored tabs, including the URLs
+            needed for recovery.
+          </p>
+          <p id="retention-summary" class="retention-summary"></p>
+        </div>
+      </header>
+      <div class="activity-toolbar">
+        <div class="activity-filters" aria-label="Filter activity">
+          <label for="activity-type-filter">
+            Filter by type:
+            <select id="activity-type-filter">
+              <option value="all">All entries</option>
+              <option value="restore">Restore</option>
+              <option value="hibernate">Hibernate</option>
+              <option value="session">Session</option>
+              <option value="tab">Tab</option>
+              <option value="window">Window</option>
+            </select>
+          </label>
+          <label class="text-filter" for="activity-text-filter">
+            Filter by text:
+            <input
+              id="activity-text-filter"
+              type="search"
+              placeholder="Title, URL, status, date…"
+              autocomplete="off"
+            />
+          </label>
+          <p id="filter-results" class="filter-results" aria-live="polite"></p>
+        </div>
+        <div class="toolbar-actions">
+          <div class="sort-controls" aria-label="Sort activity">
+            <span>Sort:</span>
+            <button
+              id="date-sort"
+              type="button"
+              data-sort-key="date"
+              aria-sort="descending"
+              title="Reverse the activity date sort order"
+            >
+              Date
+              <span
+                class="sort-indicator"
+                data-direction="descending"
+                aria-hidden="true"
+              ></span>
+            </button>
+          </div>
+          <div class="log-actions">
+            <button
+              id="export-log"
+              type="button"
+              title="Download the activity history as a JSON backup"
+            >
+              <svg
+                class="transfer-action-icon"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path d="M12 15V4" />
+                <path d="m8 8 4-4 4 4" />
+                <path d="M5 17v3h14v-3" />
+              </svg>
+              Export
+            </button>
+            <button
+              id="import-log"
+              type="button"
+              title="Import activity history from a JSON backup"
+            >
+              <svg
+                class="transfer-action-icon"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path d="M12 3v11" />
+                <path d="m8 10 4 4 4-4" />
+                <path d="M5 17v3h14v-3" />
+              </svg>
+              Import
+            </button>
+            <button
+              id="clear-log"
+              class="danger-action"
+              type="button"
+              title="Permanently clear the local activity history"
+            >
+              Clear log
+            </button>
+            <input
+              id="activity-import-file"
+              type="file"
+              accept="application/json,.json"
+              hidden
+            />
+          </div>
+        </div>
+      </div>
+      <p id="activity-status" class="activity-status" role="status"></p>
+      <p id="empty-log" class="empty" hidden>No hibernation activity yet.</p>
+      <ol id="activity-list"></ol>
+    </main>
+    <script type="module" src="/src/activity/activity.ts"></script>
+  </body>
+</html>

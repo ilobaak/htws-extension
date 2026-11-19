@@ -1,0 +1,38 @@
+{
+  "name": "htws-extension",
+  "version": "1.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "acceptance:hibernation": "npm run build && node scripts/verify_hibernation.mjs",
+    "acceptance:auto-hibernate": "npm run build && node scripts/verify_auto_hibernate.mjs",
+    "build": "npm run typecheck && vite build",
+    "acceptance:full-access": "npm run build && python scripts/create_full_access_test_build.py",
+    "dev": "vite build --watch",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint .",
+    "icons": "python scripts/generate_icons.py",
+    "package": "npm run build && python scripts/package_release.py",
+    "store:assets": "npm run build && node scripts/capture_store_screenshot.mjs && python scripts/generate_store_promo.py",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "verify:store": "npm run format:check && npm run lint && npm test && npm run package && npm run store:assets && python scripts/validate_store_artifacts.py"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@types/chrome": "0.3.7",
+    "@types/node": "26.6.6",
+    "eslint": "10.14.0",
+    "prettier": "3.10.1",
+    "puppeteer-core": "25.17.0",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.72.2",
+    "vite": "8.3.8",
+    "vitest": "5.1.0"
+  },
+  "overrides": {
+    "minimatch": "11.0.1"
+  }
+}

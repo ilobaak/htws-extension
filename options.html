@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hibernate Tabs, Windows, and Sessions Settings</title>
+  </head>
+  <body>
+    <main class="options-shell">
+      <header>
+        <p class="product-name">Hibernate Tabs, Windows, and Sessions</p>
+        <h1>Settings</h1>
+        <p class="intro">
+          Choose when inactive tabs hibernate, what must stay open, and how
+          deeply the extension may inspect page activity. Nothing is sent to us.
+          Chrome may sync scalar settings through your browser profile.
+        </p>
+      </header>
+
+      <section class="data-use settings-panel" aria-labelledby="data-use-title">
+        <h2 id="data-use-title">What the Extension Reads</h2>
+        <p>
+          Tab URLs, titles, and activity state are evaluated inside your browser
+          to apply exclusions and decide when a tab is safe to hibernate.
+          Optional website protection adds only yes-or-no signals for playing
+          media and modified fields. It never reads form values or page text.
+        </p>
+      </section>
+
+      <section
+        class="access-ledger settings-panel"
+        aria-labelledby="access-title"
+      >
+        <div>
+          <h2 id="access-title">Website Protection</h2>
+          <p id="access-status">Checking website access…</p>
+        </div>
+        <div class="access-actions">
+          <button
+            id="grant-access"
+            type="button"
+            title="Allow Hibernate Tabs, Windows, and Sessions to detect protected media and unsaved forms on websites"
+          >
+            Enable full protection
+          </button>
+          <button
+            id="revoke-access"
+            type="button"
+            hidden
+            title="Remove optional website access and use browser-level protection only"
+          >
+            Use basic protection
+          </button>
+        </div>
+      </section>
+
+      <section id="settings-form" aria-label="Protection preferences">
+        <section
+          class="settings-section settings-panel auto-hibernate-section"
+          aria-labelledby="auto-hibernate-title"
+        >
+          <div class="auto-hibernate-copy">
+            <h2 id="auto-hibernate-title">Automatic Hibernation</h2>
+            <p>
+              Archive inactive tabs after they have stayed in the background for
+              the selected time. Active and protected tabs stay open.
+            </p>
+            <label
+              class="auto-hibernate-group-setting"
+              for="auto-hibernate-grouped-tabs"
+            >
+              Grouped tabs
+              <select id="auto-hibernate-grouped-tabs">
+                <option value="together" selected>
+                  Hibernate the whole group together
+                </option>
+                <option value="individually">
+                  Hibernate eligible tabs individually
+                </option>
+              </select>
+              <small id="auto-hibernate-grouped-tabs-help"></small>
+            </label>
+          </div>
+          <div class="auto-hibernate-controls">
+            <label class="auto-hibernate-schedule" for="auto-hibernate-delay">
+              Hibernate inactive tabs after
+              <select id="auto-hibernate-delay">
+                <option value="never">Never</option>
+                <option value="15">15 minutes</option>
+                <option value="30">30 minutes</option>
+                <option value="60" selected>60 minutes</option>
+                <option value="120">2 hours</option>
+                <option value="1440">1 day</option>
+                <option value="custom">Custom</option>
+              </select>
+            </label>
+            <div
+              id="auto-hibernate-custom-control"
+              class="auto-hibernate-custom-control"
+              hidden
+            >
+              <label for="auto-hibernate-custom">Custom time</label>
+              <div>
+                <input
+                  id="auto-hibernate-custom"
+                  type="number"
+                  min="1"
+                  step="1"
+                  inputmode="numeric"
+                  disabled
+                />
+                <select
+                  id="auto-hibernate-unit"
+                  aria-label="Automatic hibernation time unit"
+                  disabled
+                >
+                  <option value="minutes">Minutes</option>
+                  <option value="hours">Hours</option>
+                  <option value="days">Days</option>
+                </select>
+              </div>
+              <small>Minimum: 1 minute.</small>
+            </div>
+            <div class="auto-hibernate-scope">
+              <p>Include in hibernation:</p>
+              <label>
+                <strong>Internal browser pages</strong>
+                <input id="auto-hibernate-internal" type="checkbox" />
+              </label>
+              <label>
+                <strong>Private and incognito tabs</strong>
+                <input id="auto-hibernate-incognito" type="checkbox" />
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <fieldset class="settings-section settings-panel protection-settings">
+          <legend>Do Not Hibernate These Tabs</legend>
+          <div class="protection-options">
+            <label class="toggle-row">
+              <span
+                ><strong>Pinned tabs</strong
+                ><small>Respect tabs you deliberately keep close.</small></span
+              >
+              <input id="protect-pinned" type="checkbox" />
+            </label>
+            <label class="toggle-row">
+              <span
+                ><strong>Audible tabs</strong
+                ><small>Do not interrupt active audio.</small></span
+              >
+              <input id="protect-audible" type="checkbox" />
+            </label>
+            <label class="toggle-row">
+              <span
+                ><strong>Playing media</strong
+                ><small>Used when optional page access is enabled.</small></span
+              >
+              <input id="protect-media" type="checkbox" />
+            </label>
+            <label class="toggle-row">
+              <span
+                ><strong>Modified fields</strong
+                ><small
+                  >Protect unsaved form input when observable.</small
+                ></span
+              >
+              <input id="protect-fields" type="checkbox" />
+            </label>
+          </div>
+        </fieldset>
+
+        <section
+          class="settings-section settings-panel internal-pages-section"
+          aria-labelledby="internal-pages-title"
+        >
+          <div>
+            <h2 id="internal-pages-title">Internal Browser Pages</h2>
+            <p>
+              Choose what happens to pages such as Bookmarks and Settings during
+              window or session hibernation.
+            </p>
+          </div>
+          <label for="internal-page-behavior">
+            When encountered
+            <select id="internal-page-behavior">
+              <option value="archive">Archive locally and restore</option>
+              <option value="keep-open">Keep open</option>
+              <option value="close-and-log">Close and log only</option>
+            </select>
+            <small id="internal-page-behavior-help">
+              Saved locally with restore controls. Bookmark controls are hidden.
+            </small>
+          </label>
+        </section>
+
+        <section
+          class="settings-section settings-panel internal-pages-section"
+          aria-labelledby="incognito-pages-title"
+        >
+          <div>
+            <h2 id="incognito-pages-title">Private And Incognito Tabs</h2>
+            <p>
+              Choose what happens to private tabs when the browser has allowed
+              this extension to run in private windows.
+            </p>
+          </div>
+          <label for="incognito-behavior">
+            When encountered
+            <select id="incognito-behavior">
+              <option value="keep-open">Keep open</option>
+              <option value="archive">
+                Archive locally and restore privately
+              </option>
+              <option value="close-and-log">Close and log only</option>
+            </select>
+            <small id="incognito-behavior-help">
+              Left open. Enable Allow in Incognito on the extension details page
+              before private tabs can be detected.
+            </small>
+          </label>
+        </section>
+
+        <section
+          class="settings-section settings-panel deletion-warning-section"
+          aria-labelledby="deletion-warning-title"
+        >
+          <div>
+            <h2 id="deletion-warning-title">Deletion Warning</h2>
+            <p>
+              Control whether deleting hibernated entries requires confirmation.
+            </p>
+          </div>
+          <label class="delete-warning-toggle" for="confirm-selected-deletion">
+            <span>
+              <strong>Confirm archive deletion</strong>
+              <small>
+                Show the same warning before a row erase, Delete Selected,
+                Delete, or Backspace erases entries.
+              </small>
+            </span>
+            <input id="confirm-selected-deletion" type="checkbox" />
+          </label>
+        </section>
+
+        <section
+          class="settings-section settings-panel retention-section"
+          aria-labelledby="retention-title"
+        >
+          <div>
+            <h2 id="retention-title">Activity History</h2>
+            <p>
+              Automatically remove activity entries after the selected time.
+            </p>
+          </div>
+          <div class="retention-controls">
+            <label class="retention-control" for="activity-retention">
+              Keep activity for
+              <select id="activity-retention">
+                <option value="0">Never clear automatically</option>
+                <option value="1">1 day</option>
+                <option value="7">7 days</option>
+                <option value="30">30 days</option>
+                <option value="90">90 days</option>
+                <option value="365">1 year</option>
+                <option value="custom">Custom number of days</option>
+              </select>
+            </label>
+            <label
+              id="custom-retention-control"
+              class="custom-retention-control"
+              for="activity-retention-custom"
+              hidden
+            >
+              Custom retention
+              <span>
+                <input
+                  id="activity-retention-custom"
+                  type="number"
+                  min="1"
+                  max="36500"
+                  step="1"
+                  inputmode="numeric"
+                  disabled
+                />
+                days
+              </span>
+            </label>
+          </div>
+        </section>
+
+        <p id="save-status" class="autosave-status" role="status"></p>
+      </section>
+
+      <section
+        class="rules-section settings-panel"
+        aria-labelledby="rules-title"
+      >
+        <div class="section-heading">
+          <div>
+            <h2 id="rules-title">Never-Hibernate Sites</h2>
+            <p>
+              Hostname rules match one host. Domain rules include subdomains.
+            </p>
+          </div>
+          <div class="rule-transfer-actions" aria-label="Site rule backup">
+            <button
+              id="export-site-rules"
+              type="button"
+              title="Download never-hibernate site rules as a JSON backup"
+            >
+              <svg
+                class="transfer-action-icon"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path d="M12 15V4" />
+                <path d="m8 8 4-4 4 4" />
+                <path d="M5 17v3h14v-3" />
+              </svg>
+              Export
+            </button>
+            <button
+              id="import-site-rules"
+              type="button"
+              title="Import never-hibernate site rules from a JSON backup"
+            >
+              <svg
+                class="transfer-action-icon"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path d="M12 3v11" />
+                <path d="m8 10 4 4 4-4" />
+                <path d="M5 17v3h14v-3" />
+              </svg>
+              Import
+            </button>
+            <input
+              id="site-rule-import-file"
+              type="file"
+              accept="application/json,.json"
+              hidden
+            />
+          </div>
+        </div>
+        <form id="rule-form" class="rule-form">
+          <input
+            id="rule-pattern"
+            aria-label="Site rule"
+            placeholder="example.com"
+            required
+            type="text"
+          />
+          <select id="rule-type" aria-label="Rule type">
+            <option value="domain">Domain</option>
+            <option value="hostname">Exact hostname</option>
+            <option value="match-pattern">Advanced pattern</option>
+          </select>
+          <button
+            type="submit"
+            title="Add this site to the never-hibernate list"
+          >
+            Add site
+          </button>
+        </form>
+        <p id="rule-status" class="inline-status" role="status"></p>
+        <ul id="rule-list" class="rule-list"></ul>
+      </section>
+
+      <section class="reset-row settings-panel">
+        <div>
+          <h2>Reset Settings</h2>
+          <p>Restore conservative defaults and remove every site rule.</p>
+        </div>
+        <button
+          id="reset-settings"
+          type="button"
+          title="Restore default protection and history settings and remove every site rule"
+        >
+          Restore defaults
+        </button>
+      </section>
+    </main>
+    <script type="module" src="/src/options/options.ts"></script>
+  </body>
+</html>
